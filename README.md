@@ -4,6 +4,8 @@ In this activity we will be learning how to utilize Sass in a Bootstrap project.
 
 ***
 - [Applying Bootstrap](#applying-bootstrap)
+- [Customize Defaults](#customize-defaults)
+	- [Colours](#colours)
 - [Resources](#resources)
 ***
 
@@ -28,9 +30,47 @@ In the [next section](https://getbootstrap.com/docs/4.3/getting-started/theming/
 
 If we really wanted to do all we could to reduce the payload of our webpage, we could include only the parts of Bootstrap we need as seen in "Option B". Bootstrap in it's entirety only consumes 20KB of bandwidth when sent to the web browser so it's generally not worth the development time and added development complexity to manage which pieces of Bootstrap to selectively include onto your webpage but in extreme cases can be useful.
 
+***&mdash; [Documentation](https://getbootstrap.com/docs/4.3/getting-started/theming/#importing)***
+
+
+
+
+## Customize Defaults
+
+When Bootstrap is imported as a Sass module into your project it enables the ability to customize a lot of Bootstrap's default values. These values include [colors](https://getbootstrap.com/docs/4.3/utilities/colors/), [grid gutters columns and breakpoints](https://getbootstrap.com/docs/4.3/layout/grid/#variables), [shadow size](https://getbootstrap.com/docs/4.3/utilities/shadows/), and [spacing size](https://getbootstrap.com/docs/4.3/utilities/spacing/) to name a few. We can also add and remove colours and breakpoints too. This enables us to use Bootstrap in a manner that's far more flexible, allowing us to design and develop websites without the constraints of Bootstrap.
+
+***&mdash; [Documentation](https://getbootstrap.com/docs/4.3/getting-started/theming/#variable-defaults)***
+
+
+
+### Colours
+
+To keep things simple lets start by using the colours that comes included with Bootstrap provided as Sass variables. In the grid of cards with thumbnails in them there should be two buttons for each card:
+
+- ***View*** with a class of `btn-view`
+- ***Edit*** with a class of `btn-edit`
+
+At the bottom of `./sass/_album.scss` we can see two empty rulesets for `.btn-view` and `.btn-edit`. Reference [this documentation](https://getbootstrap.com/docs/4.3/getting-started/theming/#color) and try to figure out how to set the `background-color` of `btn-view` to the **info** colour and `btn-edit` to the **warning** colour. Reference the solution below to check your work. Make sure to check Bootstrap's [`_variables.scss`](https://github.com/twbs/bootstrap/blob/57edecbfb86cc7708023526c05ba384f8aa5d220/scss/_variables.scss#L69) file.
+
+<details>
+  <summary>Solution</summary>
+
+  ```scss
+.btn-view {
+	background-color: $info;
+}
+
+.btn-edit {
+	background-color: $warning;
+}
+  ```
+
+</details>
+
 
 
 
 ## Resources
 
 - [**Docs:** Theming](https://getbootstrap.com/docs/4.3/getting-started/theming/)
+- [**Docs:** Customizing the Grid](https://getbootstrap.com/docs/4.3/layout/grid/#customizing-the-grid)
