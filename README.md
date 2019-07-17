@@ -4,10 +4,11 @@ In this activity we will be learning how to utilize Sass in a Bootstrap project.
 
 ***
 - [Applying Bootstrap](#applying-bootstrap)
-- [Applying Variables](#applying-variables)
-- [Modifying Variable Defaults](#modifying-variable-defaults)
-	- [Customize Colours](#customize-colours)
-	- [Customize Grid](#customize-grid)
+- [Variables](#variables)
+	- [Applying Variables](#applying-variables)
+	- [Modifying Variable Defaults](#modifying-variable-defaults)
+		- [Customize Colours](#customize-colours)
+		- [Customize Grid](#customize-grid)
 - [Resources](#resources)
 ***
 
@@ -37,7 +38,9 @@ If we really wanted to do all we could to reduce the payload of our webpage, we 
 
 
 
-## Applying Variables
+## Variables
+
+### Applying Variables
 
 To keep things simple lets start by applying the colours that comes included with Bootstrap provided as Sass variables. In the grid of cards with thumbnails in them there should be two buttons for each card:
 
@@ -65,14 +68,12 @@ When you have things working you'll notice these colours don't look very nice wi
 
 
 
-
-## Customize Defaults
+### Customize Defaults
 
 When Bootstrap is imported as a Sass module into your project it enables the ability to customize a lot of Bootstrap's default values. These values include [colors](https://getbootstrap.com/docs/4.3/utilities/colors/), [grid gutters columns and breakpoints](https://getbootstrap.com/docs/4.3/layout/grid/#variables), [shadow size](https://getbootstrap.com/docs/4.3/utilities/shadows/), and [spacing size](https://getbootstrap.com/docs/4.3/utilities/spacing/) to name a few. We can also add and remove colours and breakpoints too. This enables us to use Bootstrap in a manner that's far more flexible, allowing us to design and develop websites without the constraints of Bootstrap. Take a moment to read Bootstrap's documentation on variable defaults [here](https://getbootstrap.com/docs/4.3/getting-started/theming/#variable-defaults).
 
 
-
-### Customize Colours
+#### Customize Colours
 
 Create a file `./sass/_bootstrap-config.scss` and make it the first file you `@import` in `./sass/styles.scss`. This file will be where we write all of our default overrides for Bootstrap. It's important that this file is imported prior to Bootstrap as otherwise our overrides won't be set until Bootstrap's Sass already executes and defines the variables. You can read about that behavior [here](https://getbootstrap.com/docs/4.3/getting-started/theming/#variable-defaults). In your newly created Bootstrap configuration file override:
 
@@ -94,8 +95,7 @@ $warning: #ffdc74;
 ![buttons with modified colour values](.readme-assets/colour-override-buttons.png)
 
 
-
-### Customize Grid
+#### Customize Grid
 
 Another aspect of Bootstrap we can configure is its grid. We can even change the number of columns it has which can be of great help when you're also designing the page using a grid system. To keep things simple lets just modify the gutters. You can read up on how to do this using Bootstrap's documentation [here](https://getbootstrap.com/docs/4.3/layout/grid/#columns-and-gutters). Change the gutter width to `20px` and you should see the grid items in the card grid move closer together.
 
