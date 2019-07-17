@@ -1,0 +1,19 @@
+{
+  "name": "@mohawk/sassing-up-bootstrap",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+		"start": "node-sass sass/styles.scss -o public && concurrently \"http-server public -o\" \"node-sass -w sass/styles.scss -o public\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Palmer <matthew.palmer1@mohawkcollege.ca>",
+	"license": "UNLICENSED",
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "http-server": "^0.11.1",
+    "node-sass": "^4.12.0"
+  }
+}
