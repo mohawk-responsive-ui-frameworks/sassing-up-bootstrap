@@ -8,7 +8,9 @@ In this activity we will be learning how to utilize Sass in a Bootstrap project.
 	- [Applying Variables](#applying-variables)
 	- [Modifying Variable Defaults](#modifying-variable-defaults)
 		- [Customize Colours](#customize-colours)
+			- [Adding Colours](#adding-colours)
 		- [Customize Grid](#customize-grid)
+- [Mixins](#mixins)
 - [Resources](#resources)
 ***
 
@@ -94,6 +96,24 @@ $warning: #ffdc74;
 
 ![buttons with modified colour values](.readme-assets/colour-override-buttons.png)
 
+##### Adding Colours
+
+Bootstrap comes with a wide variety of [colors](https://getbootstrap.com/docs/4.3/getting-started/theming/#color) for various purposes. Through the use of Sass we can add additional colours. Lets add a tertiary colour. We can start by adding a new button in our hero banner:
+
+```html
+<a href="#" class="btn btn-tertiary my2">Sassy action</a>
+```
+
+Then at the top of our `_bootstrap-config.scss` we need to add to add our colour to the `$theme-colors` map. A map is a type of Sass variable that contains any number of values we put into one. Each of these values are references by a name. To add a new colour to our theme we need to add a new named value to our map by adding this to our file:
+
+```scss
+$theme-colors: (
+	"tertiary": #cf649a
+);
+```
+
+By adding this value to our `$theme-colors` map we now have a new class in our CSS `btn-tertiary`. Bootstrap takes the name of the theme colour and makes a `btn-` class for each one contained in the map.
+
 
 #### Customize Grid
 
@@ -111,7 +131,16 @@ $grid-gutter-width: 20px;
 
 
 
+## Mixins
+
+TODO
+
+
+
+
 ## Resources
 
-- [**Docs:** Theming](https://getbootstrap.com/docs/4.3/getting-started/theming/)
-- [**Docs:** Customizing the Grid](https://getbootstrap.com/docs/4.3/layout/grid/#customizing-the-grid)
+- [**Bootstrap:** Theming](https://getbootstrap.com/docs/4.3/getting-started/theming/)
+- [**Bootstrap:** Adding Colours](https://getbootstrap.com/docs/4.3/getting-started/theming/#add-to-map)
+- [**Bootstrap:** Customizing the Grid](https://getbootstrap.com/docs/4.3/layout/grid/#customizing-the-grid)
+- [**Sass:** Maps](https://sass-lang.com/documentation/values/maps)
